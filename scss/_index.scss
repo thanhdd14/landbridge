@@ -1,0 +1,361 @@
+@use "vars" as *;
+
+
+
+.mv{
+	&-bg{
+		width: 80%;
+		img{
+			width: 100%;
+			height: 100vh;
+			object-position: right;
+			@include mq(){
+				height: auto;
+			}
+		}
+	}
+	&-item{
+		width: 86%;
+		position: absolute;
+		@include v-align;
+		right: 0;
+	}
+	&-ttl{
+		display: block;
+		width: 100%;
+		max-width: 63vw;
+		font-weight: 900;
+		color: #0456A9;
+		//@include font-size(100);
+		font-size: 5vw;
+		position: absolute;
+		@include v-align;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		@include mq(){
+			font-size: 7vw;
+		}
+		span{
+			display: inline-block;
+			background: rgba(white,0.8);
+			padding: 0 1vw;
+			&:nth-child(1){
+				border-radius: 10px 0 0 0;
+			}
+			&:nth-child(3){
+				border-radius: 0 0 10px 0;
+			}
+		}
+	}
+	&-scroll{
+		position: absolute;
+		bottom: 20px;
+		right: 20px;
+		-webkit-writing-mode: vertical-rl;
+		-ms-writing-mode: tb-rl;
+		writing-mode: vertical-rl;
+		@include font-size(14);
+		font-weight: 500;
+		color: #333;
+		padding: 50px 0 0 0;
+		overflow: hidden;
+		letter-spacing: 1px;
+		&:before{
+			content: "";
+			width: 2px;
+			height: 50px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			background: #333;
+		}
+		&:after{
+			content: "";
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background: #333;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			animation: croll 1s infinite;
+		}
+		span{
+			position: relative;
+			background: white;
+			z-index: 1;
+			padding: 10px 0 0;
+		}
+	}
+}
+@keyframes croll {
+	0% {
+		top: 0;
+	}
+	50% {
+
+	}
+	100%{
+		top: 70px;
+	}
+}
+
+.world-block{
+	text-align: center;
+	padding: 100px 0;
+	position: relative;
+	@include mq(){
+		padding: 10px 0;
+	}
+	&:before{
+		content: "";
+		width: 1419px;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		@include h-align;
+		background: url("../img/index/world-bg.png")no-repeat;
+		background-size: 100%;
+		background-position: top center;
+		@include mq(lp){
+			width: 100%;
+		}
+	}
+}
+
+.news-list{
+	margin-bottom: 40px;
+	&__item{
+		border-bottom: 1px solid #333333;
+	}
+	a{
+		@include flex(0,0,wrap);
+		color: #333;
+		position: relative;
+		@include font-size(21);
+		padding: 23px 0;
+		@include mq(){
+			@include font-size(14);
+			padding: 15px 0;
+		}
+		&:after{
+			content: "";
+			width: 18px;
+			height: 18px;
+			background: url("../img/common/links.png")no-repeat;
+			background-size: 100%;
+			position: absolute;
+			@include v-align;
+			right: 0;
+			@include mq(){
+				width: 11px;
+				height: 11px;
+				top: auto;
+				transform: translateY(0);
+				bottom: 18px;
+			}
+		}
+	}
+	&__date{
+		width: 170px;
+		color: #0456A9;
+		@include mq(){
+			width: 100%;
+			margin-bottom: 10px;
+		}
+	}
+	p{
+		width: calc(100% - 170px);
+		padding: 0 30px 0 0;
+		@include mq(){
+			width: 100%;
+			padding: 0;
+		}
+	}
+}
+
+.vision-block{
+	@include flex(center,0,wrap);
+	.heading-block{
+		font-weight: 900;
+		@include mq(){
+			width: 100%;
+		}
+	}
+	&__ct{
+		width: 100%;
+		@include flex(0,center,wrap);
+		margin: -142px 0 0;
+		@include mq(){
+			margin: 0 auto;
+			max-width: 400px;
+		}
+		&-img{
+			width: 50%;
+			@include mq(){
+				width: 100%;
+				margin-bottom: 30px;
+			}
+		}
+		&-txt{
+			width: 50%;
+			@include mq(){
+				width: 100%;
+				text-align: center;
+			}
+		}
+	}
+}
+
+.serivecs-heading{
+	position: relative;
+	img{
+		width: 100%;
+	}
+	.c-ttl__01{
+		position: absolute;
+		bottom: 50px;
+		left: 0;
+		right: 0;
+
+	}
+}
+
+.serivecs-list{
+	position: relative;
+	padding: 140px 0;
+	@include mq(){
+		padding: 70px 0;
+	}
+	&:before{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: url("../img/index/serivecs-line.png")no-repeat;
+		background-size: 100%;
+		background-position: top center;
+		@include mq(lg){
+			width: 900px;
+			@include h-align;
+			right: auto;
+		}
+	}
+	&__item{
+		position: relative;
+		@include flex(0,0,wrap);
+		margin-bottom: 330px;
+		@include mq(){
+			margin-bottom: 92px;
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&:nth-child(odd){
+			@include mq(md-min){
+				margin-right: calc(((100vw - 100%) / 2) * -1);
+			}
+		}
+		&:nth-child(even){
+
+			@include mq(md-min){
+				margin-left: calc(((100vw - 100%) / 2) * -1);
+				.serivecs-list{
+					&__img{
+						order: 1;
+						img{
+							object-position: right;
+						}
+					}
+					&__ct{
+						order: 2;
+						padding: 0 0 0 50px;
+					}
+				}
+			}
+			@include mq(){
+				.serivecs-list{
+					&__img{
+						padding-left: 0;
+						padding-right: 15%;
+					}
+				}
+			}
+		}
+	}
+	&__ct{
+		width: 50%;
+		padding: 0 50px 0 0;
+		@include mq(){
+			width: 100%;
+			padding: 0;
+			@include font-size(13);
+		}
+		&-number{
+			display: inline-block;
+			position: relative;
+			@include font-size(18);
+			line-height: 1;
+			font-weight: 500;
+			@include mq(){
+				@include font-size(12);
+			}
+			&:after{
+				content: "";
+				width: 80px;
+				height: 1px;
+				background: #333;
+				position: absolute;
+				bottom: 3px;
+				left: calc(100% + 3px);
+			}
+		}
+		&-ttl{
+			display: block;
+			@include font-size(48);
+			line-height: 1.4;
+			font-weight: bold;
+			color: #0456A9;
+			margin-bottom: 30px;
+			@include mq(){
+				@include font-size(24);
+				margin-bottom: 20px;
+			}
+		}
+		p{
+			margin-bottom: 50px;
+			@include mq(){
+				margin-bottom: 20px;
+			}
+		}
+		.c-btn{
+			@include mq(md-min){
+				margin-left: 0;
+			}
+		}
+	}
+	&__img{
+
+		@include mq(md-min){
+			width: 50%;
+		}
+		@include mq(){
+			margin: 0 -15px 20px;
+			padding-left: 15%;
+		}
+		img{
+			min-height: 398px;
+			@include ob;
+			object-position: left;
+			@include mq(){
+				min-height: 100px;
+			}
+		}
+	}
+}

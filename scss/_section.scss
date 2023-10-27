@@ -1,0 +1,55 @@
+@use "vars" as *;
+
+.sec{
+	&-mv{
+		margin-bottom: 100px;
+		@include mq(){
+			margin-bottom: 20px;
+		}
+	}
+	&-world{
+		padding: 50px 0 200px;
+		@include mq(){
+			padding: 50px 0;
+		}
+	}
+	&-news{
+		&:before{
+			content: "";
+			position: absolute;
+			top: 47px;
+			left: 100px;
+			right: 0;
+			bottom: 30px;
+			background: url("../img/index/news-bg.png")no-repeat;
+			background-size: cover;
+			background-position: bottom left;
+			@include mq(){
+				background: rgba(#0456A9,0.1);
+				left: 0;
+				top: 15px;
+				bottom: 20px;
+			}
+		}
+	}
+	&-vision{
+		padding: 100px 0;
+		@include mq(){
+			padding: 50px 0;
+		}
+		.inner{
+			max-width: 1360px;
+		}
+		.heading{
+			left: auto;
+			right: 20px;
+		}
+	}
+	&-serivecs{
+		padding: 100px 0 0;
+		@include mq(){
+			padding: 50px 0 0;
+		}
+	}
+}
+
