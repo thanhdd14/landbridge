@@ -6,6 +6,9 @@
 	color: white;
 	@include font-size(24);
 	line-height: 1.8;
+	@include mq(lp){
+		@include font-size(18)
+	}
 	@include mq(){
 		@include font-size(14);
 	}
@@ -20,15 +23,28 @@
 		&-logo{
 			display: block;
 			width: 258px;
+			@include mq(lp){
+				width: 100%;
+				margin: 0 auto 50px;
+				img{
+					display: block;
+					width: 258px;
+					margin: 0 auto;
+				}
+			}
 			@include mq(){
 				width: 160px;
-				margin: 0 auto 30px;
+				margin-bottom: 30px;
 			}
 		}
 		&-note{
 			width: calc(65% - 258px);
 			padding: 0 5% 0 6%;
-			@include mq(){
+			@include mq(lp){
+				width: 60%;
+				padding: 0 5%;
+			}
+			@include mq(lg){
 				width: 100%;
 				padding: 0;
 				margin-bottom: 20px;
@@ -83,7 +99,10 @@
 		&-menu{
 			width: 35%;
 			@include flex(0,0,wrap);
-			@include mq(){
+			@include mq(lp){
+				width: 40%;
+			}
+			@include mq(lg){
 				width: 100%;
 			}
 			ul{

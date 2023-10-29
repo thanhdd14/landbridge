@@ -1,17 +1,44 @@
 @use "vars" as *;
 
 #header{
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 999;
 	padding: 15px;
+	@include smooth-transition;
 	.header-logo{
 		display: block;
 		width: 258px;
-		@include mq(){
+		position: relative;
+		@include mq(lp){
+			width: 210px;
+		}
+		@include mq(ipd){
 			width: 120px;
+		}
+		img{
+			@include smooth-transition;
+		}
+		.logo{
+			&-02{
+				opacity: 0;
+				visibility: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+
+	}
+	.c-btn{
+		position: absolute;
+		@include v-align;
+		right: 15px;
+		z-index: 3;
+		@include mq(ipd){
+			display: none;
 		}
 	}
 	.header-nav{
@@ -28,11 +55,31 @@
 			top: 0;
 			left: 0;
 			right: 0;
-			height: 100vh;
-			padding: 60px 20px 0;
-			overflow-y: scroll;
+			padding: 60px 40px;
+			background: #0D3B74;
+			transform: translateY(0);
+			border-radius: 0 0 20px 20px;
 			&.active{
 				display: block;
+			}
+			&:before{
+				content: "";
+				position: absolute;
+				@include v-align;
+				left: 0;
+				right: 0;
+				height: 200px;
+				background: url("../img/common/item-menu.png")no-repeat;
+				background-position: center;
+			}
+			&:after{
+				content: "";
+				position: absolute;
+				top: 90%;
+				left: 0;
+				right: 0;
+				height: 100vh;
+				background: rgba(#0D3B74,0.4);
 			}
 		}
 		&__menu{
@@ -45,12 +92,39 @@
 			&-item{
 				padding: 5px 2vw;
 				position: relative;
+				@include mq(ipd){
+					padding: 0;
+					border-bottom: 1px solid rgba(white,0.3);
+					&:last-child{
+						border-bottom: none;
+					}
+				}
 				>a{
 					display: block;
 					@include font-size(24);
 					font-weight: bold;
 					color: white;
+					@include mq(lp){
+						@include font-size(18);
+					}
+					@include mq(ipd){
+						color: white !important;
+						@include font-size(16);
+						text-align: center;
+						padding: 30px 0;
+					}
 				}
+			}
+		}
+		&__ttl{
+			display: none;
+			@include mq(ipd){
+				display: block;
+				color: white;
+				@include font-size(20);
+				position: absolute;
+				top: 15px;
+				left: 15px;
 			}
 		}
 	}
@@ -101,7 +175,7 @@
 				background-color: transparent;
 				&:before,&:after{
 					width: 100%;
-					background: #0456A9;
+					background: white;
 				}
 				&:before {
 					-webkit-transform: translateY(0) rotate(45deg);
@@ -112,6 +186,30 @@
 					-webkit-transform: translateY(0) rotate(-45deg);
 					transform: translateY(0) rotate(-45deg);
 					bottom: -2px;
+				}
+			}
+		}
+	}
+	&.fixed,&.header-page{
+		background: white;
+		.header-logo{
+			.logo{
+				&-01{
+					opacity: 0;
+					visibility: hidden;
+				}
+				&-02{
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+		.header-nav{
+			&__menu{
+				&-item{
+					a{
+						color: #0D3B74;
+					}
 				}
 			}
 		}

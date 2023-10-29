@@ -31,6 +31,12 @@
 				bottom: 20px;
 			}
 		}
+		&-page{
+			padding-bottom: 200px;
+			@include mq(){
+				padding: 50px 0 100px;
+			}
+		}
 	}
 	&-vision{
 		padding: 100px 0;
@@ -49,6 +55,87 @@
 		padding: 100px 0 0;
 		@include mq(){
 			padding: 50px 0 0;
+		}
+	}
+
+	&-mv-page{
+		margin-bottom: 100px;
+		@include mq(){
+			margin-bottom: 0;
+		}
+		.c-ttl__01{
+			position: absolute;
+			bottom: 3vw;
+			left: 0;
+			right: 0;
+			margin: 0;
+			@include mq(){
+				border-bottom: 6vw;
+			}
+		}
+	}
+	&-terms{
+		padding-bottom: 200px;
+		@include mq(){
+			padding: 50px 0 100px;
+		}
+	}
+	&-privacy{
+		padding-bottom: 150px;
+		@include mq(){
+			padding: 50px 0 100px;
+		}
+	}
+
+	&-about{
+		&:after{
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: url("../img/about/about-bg.png")no-repeat;
+			background-position: top right;
+			@include mq(ipd){
+				background-position: left center;
+				background-size: 90%;
+			}
+			@include mq(sm){
+				background-position: left center;
+				background-size: 145%;
+			}
+		}
+	}
+	&-mesage{
+		padding: 100px 0;
+		@include mq(){
+			padding: 30px 0 50px;
+		}
+	}
+	&-copany{
+		padding: 100px 0;
+		@include mq(ipd){
+			background: #E6EEF6;
+		}
+		@include mq(){
+			padding: 30px 0;
+
+		}
+	}
+	&-access{
+		padding: 100px 0 150px;
+		@include mq(){
+			padding: 50px 0 100px;
+		}
+		.inner{
+			max-width: 1830px;
+		}
+	}
+	&-contact{
+		padding: 0 0 150px;
+		@include mq(){
+			padding: 50px 0 100px;
 		}
 	}
 }

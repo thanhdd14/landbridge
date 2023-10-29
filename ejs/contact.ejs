@@ -1,0 +1,66 @@
+<main class="page-<%= pageData.template %>">
+	<section class="sec-mv-page">
+		<div class="mv-page__img">
+			<img src="<%= RELATIVE_PATH %>img/contact/mv.png" alt="img" class="pc">
+			<img src="<%= RELATIVE_PATH %>img/contact/mv-sp.png" alt="img" class="sp">
+		</div>
+		<h1 class="c-ttl__01 c-fc--white">
+			<span class="c-ft--en">CONTACT US</span>
+			<span class="c-ft--jp">お問合せ</span>
+		</h1>
+	</section>
+	<section class="sec-contact">
+		<div class="inner">
+			<div class="contact-note c-txt__basic">
+				<p>
+					案件のご相談・その他ご質問などございましたら、下記フォームよりお気軽にお問い合わせください。<br>
+					担当者より2〜3営業日以内に折り返しご連絡いたします。<br>
+					当社のプライバシーポリシーに同意のうえ、お問い合わせ内容を送信してください。
+				</p>
+			</div>
+			<div class="contact-form">
+				<form>
+					<dl>
+						<dt>お名前 <sub>*</sub></dt>
+						<dd>
+							<input type="text" class="form-control form-control--error">
+							<span class="error">情報を入力してください。</span>
+						</dd>
+					</dl>
+					<dl>
+						<dt>企業・団体名 </dt>
+						<dd>
+							<input type="text" class="form-control" placeholder="企業・団体名">
+						</dd>
+					</dl>
+					<dl>
+						<dt>電話番号 <sub>*</sub></dt>
+						<dd>
+							<input type="text" class="form-control" placeholder="電話番号*">
+						</dd>
+					</dl>
+					<dl>
+						<dt>メールアドレス <sub>*</sub></dt>
+						<dd>
+							<input type="text" class="form-control" placeholder="メールアドレス*">
+						</dd>
+					</dl>
+					<dl>
+						<dt>お問い合わせ内容 <sub>*</sub></dt>
+						<dd>
+							<textarea class="form-control" placeholder="お問い合わせ内容*"></textarea>
+						</dd>
+					</dl>
+					<div class="contact-form__check c-txt__basic">
+						<p>当社の<a href="">プライバシーポリシー</a>に同意のうえ、お問い合わせ内容を送信してください。</p>
+					</div>
+					<div class="contact-form__sub">
+						<button type="button" class="c-btn">
+							送信
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+</main>

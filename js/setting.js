@@ -15,18 +15,18 @@ jQuery('.js-scroll').click(function(e) {
 
 
 
-// $(document).on("click", function(){
-// 	$("aa").hide();
-// });
+$('.news-show__item dt').on('click', function(){
+    $(this).toggleClass("active").next(".news-show__ct").slideToggle();;
+});
 
-// $(window).scroll(function () {
-//     if ($(this).scrollTop() > 10) {
-//         $("#header").addClass("js-fixed");
-//     }
-//     else {
-//         $("#header").removeClass("js-fixed");
-//     }
-// });
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 10) {
+        $("#header").addClass("fixed");
+    }
+    else {
+        $("#header").removeClass("fixed");
+    }
+});
 
 //resize slider load page
 // var window_type;

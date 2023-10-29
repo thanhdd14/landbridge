@@ -1,0 +1,13 @@
+@use "vars" as *;
+
+.terms-note{
+	@include mq(){
+		@include font-size(14);
+	}
+	p{
+		margin-bottom: 60px;
+		@include mq(){
+			margin-bottom: 40px;
+		}
+	}
+}

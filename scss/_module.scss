@@ -1,5 +1,14 @@
 @use "vars" as *;
 
+main{
+	padding-top: 80px;
+	@include mq(ipd){
+		padding-top: 52px;
+	}
+	&.page-index{
+		padding-top: 0;
+	}
+}
 
 .inner {
 	display: block;
@@ -69,25 +78,70 @@
 	}
 }
 
+.mv-page__img{
+	position: relative;
+	img{
+		width: 100%;
+	}
+}
+
 
 //form input
 .form-control{
 	display: block;
 	width: 100%;
-	height: 45px;
+	height: 60px;
 	background: white;
-	border: 1px solid #ccc;
-	font-weight: 500;
-	padding: 5px 10px;
-	@include font-size(15);
+	border: 2px solid #E2E8F0;
+	padding: 5px 15px;
+	@include font-size(21);
+	margin-bottom: 15px;
+
+	@include mq(){
+		@include font-size(14);
+		padding: 0 10px;
+		height: 40px;
+		border: 1px solid #E2E8F0;
+		margin-bottom: 7px;
+	}
+	&:last-child{
+		margin-bottom: 0;
+	}
 	&:focus{
 		border-color: #66afe9;
 		outline: 0;
 		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
 		box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102,175,233,.6);
 	}
+	&::-webkit-input-placeholder {
+		color: #CBD4E1;
+	}
+	&:-moz-placeholder {
+		color: #CBD4E1;
+	}
+	&::-moz-placeholder {
+		color: #CBD4E1;
+	}
+	&:-ms-input-placeholder {
+		color: #CBD4E1;
+	}
+	&--error{
+		border: 2px solid #ED2649;
+		@include mq(){
+			border: 1px solid #ED2649;
+		}
+	}
 }
-
+textarea.form-control{
+	height: 222px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	resize: none;
+	@include mq(){
+		height: 100px;
+	}
+}
 //HTML CSS radio end check box
 
 //<ul class="pure-list">
@@ -233,15 +287,73 @@
 }
 
 
+.wp-pagenavi{
+	@include flex(center,center,wrap);
+	span,a{
+		width: 45px;
+		height: 45px;
+		border-radius: 5px;
+		@include font-size(21);
+		line-height: 1;
+		color: #0456A9;
+		background: white;
+		margin: 0 5px;
+		@include flex(center,center);
+		text-align: center;
+		position: relative;
+		@include mq(){
+			width: 37px;
+			height: 37px;
+			margin: 0 2px;
+			@include font-size(16);
+		}
+		&.active,&:hover,&.current{
+			background: #0456A9;
+			color: white;
+			opacity: 1;
+		}
 
-//navigation
-//<div class="nums-page">
-//	<div class='wp-pagenavi' role='navigation'>
-//		<a class="prevtpostslink previouspostslink" rel="next" aria-label="Prev Page" href="">Prev</a>
-//		<span aria-current='page' class='current'>1</span>
-//		<a class="page larger" title="Page 2" href="">2</a>
-//		<a class="page larger" title="Page 3" href="">3</a>
-//		<a class="nextpostslink" rel="next" aria-label="Next Page" href="">Next</a>
-//	</div>
-//</div>
-
+	}
+	.previouspostslink,.prevtpostslink,.nextpostslink{
+		text-indent: -9999px;
+		&:after{
+			content: "";
+			width: 10px;
+			height: 15px;
+			position: absolute;
+			@include v-align;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			@include smooth-transition;
+			@include mq(){
+				width: 8px;
+				height: 12px;
+			}
+		}
+	}
+	.previouspostslink,.prevtpostslink{
+		&:after{
+			background: url("../img/common/prev.png")no-repeat;
+			background-size: 100%;
+		}
+		&:hover{
+			&:after{
+				background: url("../img/common/prev02.png")no-repeat;
+				background-size: 100%;
+			}
+		}
+	}
+	.nextpostslink{
+		&:after{
+			background: url("../img/common/next.png")no-repeat;
+			background-size: 100%;
+		}
+		&:hover{
+			&:after{
+				background: url("../img/common/next02.png")no-repeat;
+				background-size: 100%;
+			}
+		}
+	}
+}

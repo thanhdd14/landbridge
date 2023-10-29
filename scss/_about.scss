@@ -1,0 +1,183 @@
+@use "vars" as *;
+
+.about-block {
+	padding: 100px 0;
+	@include mq(){
+		padding: 50px 0;
+	}
+}
+
+.mesage-img {
+	position: relative;
+	z-index: 2;
+	width: 55%;
+	margin-bottom: -10vw;
+	@include mq(){
+		width: 100%;
+		margin: 0 0 30px;
+	}
+	img{
+		width: 100%;
+	}
+}
+
+.mesage-bock {
+	background: #F7F7F7;
+	position: relative;
+	text-align: center;
+	padding: 3vw 50px 65px;
+	@include mq(){
+		padding: 30px 15px;
+		margin: 0 -15px;
+	}
+	.c-ttl__01 {
+		text-align: right;
+		margin-bottom: 5vw;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		left: -70px;
+		right: -70px;
+		top: 36%;
+		height: 70%;
+		background: url("../img/about/about-item.png") no-repeat;
+		background-size: 100%;
+		@include mq(){
+			left: 10px;
+			right: 10px;
+		}
+	}
+
+	&__name {
+		display: block;
+		text-align: right;
+		position: relative;
+		z-index: 1;
+		@include mq(){
+			img{
+				width: 127px;
+			}
+		}
+	}
+
+	p {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.copany-block{
+	position: relative;
+	@include flex(0,0,wrap);
+	&:before{
+		content: "";
+		position: absolute;
+		top: 50px;
+		right: -100px;
+		bottom: 0;
+		width: 300%;
+		background: url(../img/about/company-bg.png) no-repeat;
+		background-size: cover;
+		background-position: 100% 100%;
+		@include mq(ipd){
+			display: none;
+		}
+	}
+	.c-ttl__01{
+		text-align: left;
+		width: 400px;
+		@include mq(ipd){
+			width: 100%;
+		}
+	}
+	&__note{
+		width: calc(100% - 400px);
+		padding: 120px 0 70px;
+		@include mq(ipd){
+			width: 100%;
+			padding: 0;
+		}
+		tr{
+			@include mq(){
+				display: block;
+				padding: 8px 0;
+			}
+			th,td{
+				@include mq(){
+					display: block;
+					width: 100%;
+				}
+			}
+			th{
+				color: #0456A9;
+			}
+			td{
+				padding: 0 0 0 50px;
+				@include mq(){
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+.access-list{
+	@include flex(0,0,wrap);
+	margin: 0 -20px;
+	&__item{
+		width: 50%;
+		padding: 0 20px;
+		@include font-size(24);
+		@include mq(ipd){
+			width: 100%;
+			@include font-size(14);
+			margin-bottom: 40px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+		p{
+			position: relative;
+			padding: 0 0 0 35px;
+			@include mq(ipd){
+				padding: 0 0 0 25px;
+			}
+			&:before{
+				content: "";
+				width: 25px;
+				height: 32px;
+				background: url("../img/about/map.png")no-repeat;
+				background-size: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				@include mq(ipd){
+					width: 15px;
+					height: 20px;
+				}
+			}
+		}
+		.c-ttl__02{
+			@include flex(0,center,wrap);
+			img{
+				display: inline-block;
+				width: 43px;
+				margin: 0 15px 0 0;
+				@include mq(){
+					width: 24px;
+				}
+			}
+		}
+		iframe{
+			width: 100% !important;
+			height: 500px !important;
+			margin-bottom: 30px;
+			@include mq(){
+				height: 210px !important;
+				margin-bottom: 15px;
+			}
+		}
+	}
+}

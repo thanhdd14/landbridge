@@ -1,6 +1,10 @@
-<header id="header">
+<header id="header" class="<% if(pageData.template == 'about' || pageData.template == 'contact' || pageData.template == 'services' || pageData.template == 'news' || pageData.template == 'terms' || pageData.template == 'privacy-policy'){ %> header-page <% } %>">
 	<a href="<%= RELATIVE_PATH %>" class="header-logo">
-		<img src="<%= RELATIVE_PATH %>img/common/logo.png" alt="img">
+		<img src="<%= RELATIVE_PATH %>img/common/logo.png" alt="img" class="logo-01">
+		<img src="<%= RELATIVE_PATH %>img/common/logo-02.svg" alt="img" class="logo-02">
+	</a>
+	<a href="" class="c-btn">
+		お問い合わせ
 	</a>
 	<nav class="header-nav">
 		<ul class="header-nav__menu">
@@ -17,6 +21,7 @@
 				<a href="">企業情報</a>
 			</li>
 		</ul>
+		<span class="header-nav__ttl">Menu</span>
 	</nav>
 	<span class="js-mobile">
 		<span></span>

@@ -1,0 +1,14 @@
+@use "vars" as *;
+
+
+.privacy-note{
+	@include mq(){
+		@include font-size(14);
+	}
+	p{
+		margin-bottom: 80px;
+		@include mq(){
+			margin-bottom: 30px;
+		}
+	}
+}

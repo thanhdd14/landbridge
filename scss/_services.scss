@@ -1,0 +1,46 @@
+@use "vars" as *;
+
+.serivecs-heading{
+	position: relative;
+	padding: 100px 0 300px;
+	@include mq(){
+		padding: 100px 0;
+	}
+	&:before{
+		content: "";
+		max-width: 1580px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: 0 auto;
+		background: url("../img/serivecs/serivecs-item.png")no-repeat;
+		background-size: 100%;
+		background-position: center center;
+		z-index: 1;
+		@include mq(){
+			left: 15px;
+			right: 15px;
+		}
+	}
+	&__ct{
+		position: relative;
+		z-index: 2;
+	}
+	&__img{
+		width: 28%;
+		position: absolute;
+		@include mq(lg){
+			display: none;
+		}
+		&--left{
+			left: 0;
+			bottom: 0;
+		}
+		&--right{
+			right: 0;
+			top: 50px;
+		}
+	}
+}

@@ -34,7 +34,7 @@
 		right: 0;
 		margin: 0 auto;
 		@include mq(){
-			font-size: 7vw;
+			font-size: 6vw;
 		}
 		span{
 			display: inline-block;
@@ -110,6 +110,7 @@
 	position: relative;
 	@include mq(){
 		padding: 10px 0;
+		@include font-size(12);
 	}
 	&:before{
 		content: "";
@@ -211,17 +212,17 @@
 	}
 }
 
-.serivecs-heading{
+.serivecs-banner{
 	position: relative;
 	img{
 		width: 100%;
 	}
 	.c-ttl__01{
 		position: absolute;
-		bottom: 50px;
+		bottom: 3vw;
 		left: 0;
 		right: 0;
-
+		margin: 0;
 	}
 }
 
@@ -323,9 +324,24 @@
 			font-weight: bold;
 			color: #0456A9;
 			margin-bottom: 30px;
+			@include mq(lp){
+				@include font-size(34);
+			}
 			@include mq(){
 				@include font-size(24);
 				margin-bottom: 20px;
+			}
+			&-small{
+				display: block;
+				@include font-size(28);
+				font-weight: bold;
+				color: #0456A9;
+				text-decoration: underline;
+				margin-bottom: 30px;
+				@include mq(){
+					@include font-size(16);
+					margin-bottom: 10px;
+				}
 			}
 		}
 		p{
@@ -356,6 +372,47 @@
 			@include mq(){
 				min-height: 100px;
 			}
+		}
+	}
+	&--page{
+		padding: 0;
+		&:before{
+			background: url(../img/serivecs/serivecs-line.png) no-repeat;
+			background-size: 100%;
+			background-position: top;
+			margin: 0 auto;
+			top: 105vh;
+			left: 12%;
+			@include mq(){
+				top: 2.3%;
+				left: 48%;
+				width: 737px;
+			}
+		}
+		.serivecs-list{
+			&__item{
+				align-items: center;
+				@include mq(md-min){
+					margin-bottom: 0;
+					&:nth-child(even){
+						.serivecs-list__ct{
+							padding: 0 0 0 12%;
+						}
+					}
+				}
+				@include mq(){
+					margin-bottom: 60px;
+				}
+			}
+			&__ct{
+				@include mq(md-min){
+					&-ttl{
+						margin-bottom: 100px;
+					}
+					padding: 0 13% 0 0;
+				}
+			}
+
 		}
 	}
 }

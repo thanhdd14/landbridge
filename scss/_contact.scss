@@ -1,0 +1,64 @@
+@use "vars" as *;
+
+.contact-note{
+	text-align: center;
+	margin-bottom: 80px;
+	@include mq(){
+		margin-bottom: 40px;
+	}
+}
+
+.contact-form{
+	dl{
+		@include flex(0,0,wrap);
+		margin-bottom: 30px;
+		dt{
+			width: 250px;
+			@include font-size(24);
+			color: #0456A9;
+			font-weight: bold;
+			@include mq(){
+				width: 100%;
+				@include font-size(16);
+				margin-bottom: 7px;
+			}
+			sub{
+				color: #ED2649;
+			}
+		}
+		dd{
+			width: calc(100% - 250px);
+			@include mq(){
+				width: 100%;
+			}
+		}
+	}
+	&__check{
+		text-align: center;
+		margin-bottom: 50px;
+		@include mq(){
+			margin-bottom: 30px;
+		}
+		a{
+			text-decoration: underline;
+			color: #0456A9;
+		}
+	}
+}
+.error{
+	color: #ED2649 !important;
+	display: block;
+	position: relative;
+	padding: 0 0 0 23px;
+	@include font-size(14);
+	&:before{
+		content: "";
+		width: 16px;
+		height: 16px;
+		background: url("../img/common/error.png")no-repeat;
+		background-size: 100%;
+		position: absolute;
+		top: 2px;
+		left: 0;
+	}
+}
